@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+    <head>
+        <meta charset="UTF-8">
+        <title>TruthGuard AI</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div class="container">
+            <h1>TruthGuard AI</h1>
+            <p>Detector Inteligente de Fake News</p>
+        
+            <form method="POST">
+                <textarea
+                    name="noticia"
+                    placeholder="Cole a notícia aqui..."
+                    required
+                ></textarea>
+
+                <button type="submit">
+                    Analisar Notícia
+                </button>
+            </form>
+
+            {% if resultado %}
+
+                <div class="resultado">
+                    <h2>
+                        Resultado:
+                    </h2>
+
+                    <p>
+                        {% if resultado == 'fake' %}
+
+                             🚨 Possível Fake News
+
+                        {% else %}
+
+                            ✅ Notícia Possivelmente Real
+
+                        {% endif %}
+                    </p>
+
+                    <p>
+                        Confiança:
+                        {{ probabilidade }}%
+                    </p>
+                </div>
+            {% endif %}
+        </div>
+    </body>
+</html>
