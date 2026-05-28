@@ -85,7 +85,7 @@ O sistema segue as seguintes etapas:
 Clone o repositório:
 
 ```bash id="yht6sk"
-git clone https://github.com/seu-usuario/truthguard-ai.git
+git clone https://github.com/MrHendrix0611/TruthGuardAI.git
 ```
 
 Entre na pasta:
